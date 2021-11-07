@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+<section class="aboutt section pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        {{ partial "images/image.html" (dict "Src" .Params.image "Class" "rounded-8")}}
+      </div>
+    </div>
+
+    <div class="row section">
+      <div class="col-lg-8 mx-auto">
+        <div class="content">
+          {{ .Content }}
+        </div>
+
+        <div class="gallery-item d-none">
+          <div class="row g-4">
+            {{ range .Params.gallery_items }}
+            <div class="col-lg-3">
+              {{ partial "images/image.html" (dict "Src" .image "Class" "rounded-6")}}
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

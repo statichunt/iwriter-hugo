@@ -1,0 +1,165 @@
+// theme switcher
+.switch {
+
+  .sun {
+    opacity: 0;
+  }
+
+  .moon,
+  .sun {
+    transition: 0.35s;
+  }
+}
+
+.dark .switch {
+  svg {
+    stroke: $white;
+  }
+
+  .sun {
+    opacity: 1;
+  }
+
+  .moon {
+    opacity: 0;
+  }
+}
+
+// content switcher
+body{
+  .only-dark {
+    display: none;
+  }
+  .only-light {
+    display: initial;
+  }
+  &.dark{
+    .only-light {
+      display: none;
+    }
+    .only-dark {
+      display: initial;
+    }
+  }
+}
+
+
+
+// other css
+.dark {
+  background-color: $dark-body-bg;
+
+  .bg-secondary {
+    background-color: darken($dark-body-bg, 3%) !important;
+  }
+
+  .footer .copyright a,
+  .accordion-button,
+  .code-tabs .nav-item.active .nav-link {
+    color: $dark-text-dark;
+  }
+  .card{
+    background-color: transparent;
+  }
+  .content thead,
+  .accordion .accordion-body {
+    background-color: $dark-body-bg;
+  }
+
+  .content tbody tr:nth-child(odd),
+  .code-tabs .tab-content,
+  .accordion-item,
+  .accordion-button,
+  blockquote{
+    background-color: darken($dark-body-bg, 3%);
+  }
+
+  .content pre{
+    background-color: darken($dark-body-bg, 3%) !important;
+  }
+
+  .social-links {
+    a {
+      &:hover {
+        background: $white;
+        color: $text-dark;
+      }
+    }
+  }
+ 
+  p,
+  .content thead th,
+  .code-tabs .nav-item .nav-link,
+  .content tbody tr td:nth-child(1){
+    color: $dark-text-light;
+  }
+
+  .notices {
+    &.note p {
+      border-top: 1.9rem solid #6ab0de;
+      background: #1e303c;
+    }
+
+    &.tip p {
+      border-top: 1.9rem solid #78c578;
+      background: #243a24;
+    }
+
+    &.info p {
+      border-top: 1.9rem solid #f0b37e;
+      background: #42362c;
+    }
+
+    &.warning p {
+      border-top: 1.9rem solid #e06f6c;
+      background: #483331;
+    }
+  }
+
+
+ 
+  
+  .checkmark svg {
+    fill: transparent;
+  }
+
+  .content-light {
+    display: none;
+  }
+
+  .content-dark {
+    display: block;
+  }
+
+
+  .border,
+  .border-top,
+  .border-left,
+  .border-right,
+  .border-bottom,
+  .content hr,
+  .search-box,
+  .code-tabs .nav-item,
+  .content table,
+  .content thead tr,
+  .content table th,
+  .content table td,
+  .content tr:not(:last-child),
+  .accordion .accordion-body {
+    border-color: $dark-border-color !important;
+  }
+
+  
+  .form-control,
+  textarea,
+  .search-box,
+  .widget input {
+    background-color: darken($dark-body-bg, 3%)  !important;
+    color: $dark-text-dark;
+
+    &::placeholder {
+      color: $dark-text-dark;
+    }
+  }
+
+}

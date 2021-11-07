@@ -1,0 +1,23 @@
+<footer class="bg-secondary text-center footer">
+  <div class="container">
+    <div class="row section">
+      <div class="col-12">
+        <h4 class="fw-semibold">{{ i18n `follow_me` }}</h4>
+        {{with site.Params.social}}
+          <ul class="list-inline social-links">
+            {{range .}}
+            <li class="list-inline-item"><a href="{{.link | safeURL}}" title="{{.name | humanize}}"><i class="{{.icon}}"></i></a>
+            </li>
+            {{end}}
+          </ul>
+        {{end}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 border-top py-4">
+        <p>{{site.Params.copyright | markdownify}} {{if site.Params.theme_copyright}} | Theme by <a target="_blank" rel="noopener noreferrer" href="https://gethugothemes.com/">GetHugoThemes</a>{{end}}</p>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,164 @@
+<!-- navigation -->
+<header class="{{if site.Params.navbar_fixed}}sticky-top navbar-bg{{end}} navigation">
+  <div class="container">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light flex-lg-nowrap">
+
+      <!-- navbar brand/logo -->
+      <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
+        {{ partial "images/logo.html" .  }}
+      </a>
+      
+      <div class="d-flex align-items-center">
+        <!-- Language List -->
+        {{ if .IsTranslated }}
+        <select class="m-2 me-0 border-0 bg-transparent select-language d-inline-block d-lg-none" id="select-language" onchange="location = this.value;">
+          {{ $siteLanguages := site.Languages}}
+          {{ $pageLang := .Page.Lang}}
+          {{ range .Page.AllTranslations }}
+          {{ $translation := .}}
+          {{ range $siteLanguages }}
+          {{ if eq $translation.Lang .Lang }}
+          {{ $selected := false }}
+          {{ if eq $pageLang .Lang}}
+          <option id="{{ $translation.Language }}" value="{{ $translation.RelPermalink }}" selected>{{ .LanguageName }}
+          </option>
+          {{ else }}
+          <option id="{{ $translation.Language }}" value="{{ $translation.RelPermalink }}">{{ .LanguageName }}</option>
+          {{ end }}
+          {{ end }}
+          {{ end }}
+          {{ end }}
+        </select>
+        {{ end }}
+
+        {{ if site.Params.theme_switch }}
+        <div class="switch dark-mode-switch position-relative d-inline-block d-lg-none">
+          <span class="checkmark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="20" height="20" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="#000">
+              <mask id="m">
+                <circle class="masker" cx="7.5" cy="7.5" r="8.5" fill="#fff" />
+              </mask>
+              <g mask="url(#m)">
+                <path class="sun" d="M7.5 1.5v-1m0 13.99v-.998m6-5.997h1m-13 0h-1m2-4.996l-1-1m12 0l-1 1m-10 9.993l-1 1m12 0l-1-1m-2-4.997a2.999 2.999 0 01-3 2.998 2.999 2.999 0 113-2.998z" />  
+              </g>
+              <path class="moon" fill="white" d="M1.66 11.362A6.5 6.5 0 007.693.502a7 7 0 11-6.031 10.86z" />  
+            </svg>
+          </span>
+        </div>
+        {{ end }}
+
+        {{ if site.Params.search }}
+        <!-- search -->
+        <div class="search px-4 d-inline-block d-lg-none">
+          <button id="searchOpen-mobile" aria-label="search" class="search-btn"><i class="fas fa-search"></i></button>
+          <div class="search-wrapper">
+            <form action="{{ `search`| relLangURL }}" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search"  placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose-mobile" class="search-close"><i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        {{ end }}
+
+        <!-- navbar toggler -->
+        <button aria-label="navbar toggler" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <ul class="navbar-nav mx-auto">
+          <!-- menu active -->
+          {{ $currentPage := . }}
+          {{ range site.Menus.main }}
+          {{ $menuURL := .URL | absLangURL }}
+          {{ $pageURL:= $currentPage.Permalink | absLangURL }}
+          {{ $active := eq $menuURL $pageURL }}
+          {{ if .HasChildren }}
+          <li class="nav-item dropdown 
+            {{ range .Children }}
+            {{ $childURL := .URL | absLangURL }}
+            {{ $active := eq $childURL $pageURL }}
+            {{ if $active }}active{{ end }}
+            {{ end }}">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ .Name }}</a>
+            <div class="dropdown-menu">
+              {{ range .Children }}
+              {{ $childURL := .URL | absLangURL }}
+              {{ $active := eq $childURL $pageURL }}
+              <a class="dropdown-item {{ if $active }}active{{ end }}" {{if findRE `^http` .URL}}target="_blank"
+                rel="noopener" {{end}}
+                href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{ .Name }}</a>
+              {{ end }}
+            </div>
+          </li>
+          {{ else }}
+          <li class="nav-item {{ if $active }}active{{ end }}">
+            <a class="nav-link" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
+              href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{.Name}}</a>
+          </li>
+          {{ end }}
+          {{ end }}
+        </ul>
+
+        <!-- Language List -->
+
+        {{ if .IsTranslated }}
+        <select class="m-2 me-0 border-0 bg-transparent select-language d-none d-lg-inline-block" id="select-language" onchange="location = this.value;">
+          {{ $siteLanguages := site.Languages}}
+          {{ $pageLang := .Page.Lang}}
+          {{ range .Page.AllTranslations }}
+          {{ $translation := .}}
+          {{ range $siteLanguages }}
+          {{ if eq $translation.Lang .Lang }}
+          {{ $selected := false }}
+          {{ if eq $pageLang .Lang}}
+          <option id="{{ $translation.Language }}" value="{{ $translation.RelPermalink }}" selected>{{ .LanguageName }}
+          </option>
+          {{ else }}
+          <option id="{{ $translation.Language }}" value="{{ $translation.RelPermalink }}">{{ .LanguageName }}</option>
+          {{ end }}
+          {{ end }}
+          {{ end }}
+          {{ end }}
+        </select>
+        {{ end }}
+
+        {{ if site.Params.theme_switch }}
+        <div class="switch dark-mode-switch position-relative d-none d-lg-inline-block">
+          <span class="checkmark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="20" height="20" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="#000">
+              <mask id="m">
+                <circle class="masker" cx="7.5" cy="7.5" r="8.5" fill="#fff" />
+              </mask>
+              <g mask="url(#m)">
+                <path class="sun" d="M7.5 1.5v-1m0 13.99v-.998m6-5.997h1m-13 0h-1m2-4.996l-1-1m12 0l-1 1m-10 9.993l-1 1m12 0l-1-1m-2-4.997a2.999 2.999 0 01-3 2.998 2.999 2.999 0 113-2.998z" />  
+              </g>
+              <path class="moon" fill="white" d="M1.66 11.362A6.5 6.5 0 007.693.502a7 7 0 11-6.031 10.86z" />  
+            </svg>
+          </span>
+        </div>
+         {{ end }}
+         
+        {{ if site.Params.search }}
+        <!-- search -->
+        <div class="search px-4 d-none d-lg-inline-block">
+          <button id="searchOpen" aria-label="search" class="search-btn"><i class="fas fa-search"></i></button>
+          <div class="search-wrapper">
+            <form action="{{ `search`| relLangURL }}" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search"
+                placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        {{ end }}
+     
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->

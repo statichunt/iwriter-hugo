@@ -1,0 +1,13 @@
+{{ $.Scratch.Add "index" slice }}
+{{ range (where site.RegularPages "Section" "in" site.Params.mainSections)}}
+
+{{ $date:= time.Format ":date_long" .PublishDate }}
+
+{{ with .Params.image }}
+{{ $.Scratch.Set "image" (partial "images/image.html" (dict "Src" . "Size" "525x350" "Class" "w-100 card-img-top")) }}
+{{ end }}
+{{ $image:= $.Scratch.Get "image" }}
+
+{{ $.Scratch.Add "index" (dict "title" .Title "date" $date "image" $image "categories" .Params.categories "contents" .Plain "permalink" .RelPermalink) }}
+{{ end }}
+{{ $.Scratch.Get "index" | jsonify }}

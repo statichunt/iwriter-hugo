@@ -1,0 +1,86 @@
+/* Button style */
+.btn {
+  font-size: 1rem;
+  font-family: $font-primary;
+  text-transform: capitalize;
+  padding: 0.7em 1em;
+  border-radius: 6px;
+  border: 1px solid;
+  position: relative;
+  z-index: 1;
+  transition: 0.2s ease;
+  font-weight: 600;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+    z-index: -1;
+    top: 0;
+    content: "";
+    border-radius: 5px;
+    border-color: transparent;
+    transition: .3s;
+  }
+
+  &:hover:before {
+    width: 100%;
+  }
+
+  &-lg {
+    padding: 10px 36px;
+  }
+
+  &-md {
+    padding: 10px 24px;
+  }
+
+  &-sm {
+    padding: 5px 16px;
+  }
+
+  &:hover,
+  &:active,
+  &.active,
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: none !important;
+  }
+}
+
+.btn-primary {
+  background: $color-primary;
+  color: $white;
+  border-color: $color-primary;
+
+  &:hover,
+  &:active,
+  &.active,
+  &:focus,
+  &.focus {
+    border-color: rgba(0, 0, 0, .3) !important;
+  }
+}
+
+.btn-outline-primary {
+  background: transparent;
+  color: $color-primary;
+  border-color: $color-primary;
+  font-size: 1rem;
+
+  &::before{
+    background: $color-primary;
+  }
+
+  &:hover,
+  &:active,
+  &.active,
+  // &:focus,
+  &.focus {
+    background: transparent !important;
+    color: $white;
+  }
+}

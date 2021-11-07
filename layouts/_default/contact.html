@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+<!--===================== Contact Start =====================--> 
+<section class="contact border-top section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8  mx-auto">
+        <div class="pb-5">
+          {{ .Content }}
+        </div>
+        
+        <form action="{{ site.Params.contact_form_action }}" method="post">
+          <div class="row g-4">
+            <div class="col-md-6 mb-3 mt-0">
+              <input type="text" class="form-control" placeholder="{{ i18n `first_name`}}" aria-label="{{ i18n `first_name`}}" name="{{ i18n `first_name`}}" required>
+            </div>
+            <div class="col-md-6 mb-3 mt-0">
+              <input type="text" class="form-control" placeholder="{{ i18n `last_name`}}" aria-label="{{ i18n `last_name`}}" name="{{ i18n `last_name`}}" required>
+            </div>
+            <div class="col-12 mb-3 mt-0">
+              <input type="email" class="form-control" placeholder="{{ i18n `email`}}" aria-label="{{ i18n `email`}}" name="{{ i18n `email`}}" required>
+            </div>
+         
+            <div class="col-12 mb-3 mt-0">
+              <textarea  rows="7" class="form-control mb-4" placeholder="{{ i18n `message`}}" id="floatingTextarea" name="{{ i18n `message`}}" required></textarea>
+            </div>
+            <div class="col-12 mb-3 mt-0">
+              <button type="submit" class="btn btn-primary btn-md">{{ i18n `submit`}}</button>
+            </div>
+          </div>
+         
+        </form>
+        
+
+      </div>
+    </div>
+  </div>
+</section>
+<!--===================== Contact End =====================--> 
+
+{{ end }}
