@@ -30,3 +30,6 @@
 
 - id: search
   translation: Search here
+
+- id: search_for
+  translation: Search results for

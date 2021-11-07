@@ -42,7 +42,7 @@
 
   &.active {
     .nav-link {
-      color: $text-dark;
+      color: $color-primary;
     }
   }
 
@@ -85,7 +85,7 @@
     &.active,
     &:hover {
       background-color: transparent;
-      color: $text-dark;
+      color: $color-primary;
     }
 
     &:focus {
