@@ -55,8 +55,6 @@ font_icon = "Font Awesome 5 Free" # https://fontawesome.com/v5.15/icons/
 [[params.plugins.css]]
 link = "plugins/slick/slick.css"
 [[params.plugins.css]]
-link = "plugins/venobox/venobox.min.css"
-[[params.plugins.css]]
 link = "plugins/font-awesome/fontawesome.min.css"
 [[params.plugins.css]]
 link = "plugins/font-awesome/brands.css"
@@ -76,8 +74,6 @@ link = "plugins/search/fuse.min.js"
 link = "plugins/search/mark.js"
 [[params.plugins.js]]
 link = "plugins/search/search.js"
-[[params.plugins.js]]
-link = "plugins/venobox/venobox.min.js"
 [[params.plugins.js]]
 link = "plugins/instafeed/instafeed.min.js"
 [[params.plugins.js]]

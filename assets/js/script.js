@@ -63,10 +63,6 @@ $(document).ready(function () {
     tabPane.addClass('active');
   });
 
-
-  // venobox
-  $('.venobox').venobox();
-
   // instafeed
     if (($('#instafeed').length) !== 0) {
       var accessToken = $('#instafeed').attr('data-accessToken');
@@ -109,7 +105,4 @@ $(document).ready(function () {
       });
     }, 1500);
 
-
 });
-
-
