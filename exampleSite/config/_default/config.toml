@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://demo.gethugothemes.com/iwriter/"
+baseURL = "https://demo.statichunt.com/iwriter/"
 title = "iWriter"
 theme = "iWriter-hugo"
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
@@ -46,7 +46,7 @@ maxAge = "720h"
 ############################# Markup ###############################
 [markup]
 [markup.goldmark.renderer]
-unsafe= true
+unsafe = true
 
 [markup.highlight]
 style = 'monokai' # see https://xyproto.github.io/splash/docs/all.html
