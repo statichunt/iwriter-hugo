@@ -27,13 +27,12 @@ weight = 5
 name = "Pages"
 hasChildren = true
 
-  [[main]]
-  parent = "Pages"
-  name = "blog Details"
-  url = "blog/post-1/"
+[[main]]
+parent = "Pages"
+name = "Blog Details"
+url = "blog/post-1/"
 
-  [[main]]
-  parent = "Pages"
-  name = "Category"
-  url = "categories/travel"
-
+[[main]]
+parent = "Pages"
+name = "Category"
+url = "categories/travel"

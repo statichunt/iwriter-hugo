@@ -1,19 +1,15 @@
-{{ if site.Params.theme_switch }}
+<!-- theme switcher -->
+{{ if site.Params.theme_switcher }}
 <script>
-  var darkMode = false;
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    darkMode = true;
-  }
-  if (localStorage.getItem('theme') === 'dark') {
-    darkMode = true;
-  } else if (localStorage.getItem('theme') === 'light') {
-    darkMode = false;
-  }
-  if (darkMode) {
-    document.body.classList.toggle('dark');
-  }
+  var darkMode = {{if eq site.Params.theme_default "dark"}}true{{else}}false{{end}};
+  {{ if eq site.Params.theme_default "automatic" }}
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches){darkMode = true}
+  {{ end }}
+  if (localStorage.getItem('theme') === 'dark'){darkMode = true}
+  else if (localStorage.getItem('theme') === 'light'){darkMode = false}
+  if (darkMode){document.body.classList.toggle('dark')}
   document.addEventListener('DOMContentLoaded', () => {
-    var themeSwitch = document.querySelectorAll('.dark-mode-switch');
+    var themeSwitch = document.querySelectorAll('.theme-switcher');
     [].forEach.call(themeSwitch, function (ts) {
       ts.addEventListener('click', () => {
         document.body.classList.toggle('dark');
@@ -21,10 +17,8 @@
       });
     })
   });
-
 </script>
-{{end}}
-
+{{ end }}
 
 
 <!-- JS Plugins + Main script -->

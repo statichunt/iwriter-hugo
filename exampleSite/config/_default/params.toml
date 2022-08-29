@@ -30,10 +30,9 @@ custom_script = ""
 google_tag_manager = "" # example: G-XXXXXXXXXX
 mainSections = ["blog"]
 
-# theme mode
-theme_switch = true
-default_mode = "light" # available options [light/dark]
-
+# theme-mode
+theme_switcher = true
+theme_default = "system" # available options [light/dark/system]
 
 # Preloader
 [preloader]
@@ -43,7 +42,7 @@ preloader = "" # use jpg, png, svg or gif format.
 
 # Instagram feed
 [instafeed]
-enable = true
+enable = false
 access_token = "IGQVJYeUk4YWNIY1h4OWZANeS1wRHZARdjJ5QmdueXN2RFR6NF9iYUtfcGp1NmpxZA3RTbnU1MXpDNVBHTzZAMOFlxcGlkVHBKdjhqSnUybERhNWdQSE5hVmtXT013MEhOQVJJRGJBRURn"
 
 # matomo tracking: see https://matomo.org/

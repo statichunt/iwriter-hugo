@@ -3,8 +3,11 @@
 <section class="bg-secondary section">
   {{with .Params.banner}}
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6 col-xxl-5 pe-xxl-5 mb-5 mb-lg-0">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        {{ partial "images/image.html" (dict "Src" .image "Class" "rounded-7")}}
+      </div>
+      <div class="col-lg-6 col-xxl-5 pe-xxl-5">
         <h1 class="fw-extrabold mb-3">{{.title | markdownify}}</h1>
         <p class="mb-5">{{.description | markdownify}}</p>
 
@@ -13,10 +16,6 @@
         <a href="{{.RelPermalink}}" class="btn btn-primary btn-lg">{{ .label }}</a>
         {{ end }}
         {{ end }}
-      </div>
-
-      <div class="col-lg-6 offset-xxl-1">
-        {{ partial "images/image.html" (dict "Src" .image "Class" "rounded-7")}}
       </div>
     </div>
   </div>
