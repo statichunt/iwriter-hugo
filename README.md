@@ -1,4 +1,4 @@
-﻿# iWriter Hugo | [Demo](https://demo.gethugothemes.com/iWriter-hugo)
+﻿# iWriter Hugo - Personal Blog Theme | [Demo](https://demo.statichunt.com/iwriter-hugo/)
 
 ## Features
 
