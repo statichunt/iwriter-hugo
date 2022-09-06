@@ -6,9 +6,9 @@ logo = "images/logo.png"
 logo_dark = "images/logo-w.png"
 # use `px` or `x` with logo_width, example: "100px".
 # Note: logo_width is not work with .svg file
-logo_width = "100px"
+logo_width = "200px"
 # logo text will only show when logo is missing.
-logo_text = "Boilerplate"
+logo_text = "iWriter"
 # navbar fixed to top
 navbar_fixed = true
 # OpenGraph / Twitter Card metadata

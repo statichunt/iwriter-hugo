@@ -1,9 +1,7 @@
 body {
   background-color: $body-bg;
   overflow-x: hidden;
-
   &.dark {
-    background-color: $dark-body-bg;
     color: $light;
   }
 }
@@ -49,12 +47,13 @@ button,
 select {
   cursor: pointer;
   transition: 0.2s ease;
-
   &:focus {
     outline: 0;
   }
 }
-
+a {
+  color: $dark;
+}
 a:hover {
   color: $color-primary;
 }
@@ -62,10 +61,6 @@ a:hover {
 ul {
   margin: 0;
   padding: 0;
-}
-
-.slick-slide {
-  outline: 0;
 }
 
 .section {
@@ -89,22 +84,24 @@ ul {
 
 .card {
   border: 0;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 
   &-body {
     padding-left: 0;
   }
 }
 
-.card-img-top {
-  border-top-left-radius: .5rem;
-  border-top-right-radius: .5rem;
+.card-img {
+  border-radius: 0 !important;
 }
-
 
 /* overlay */
 .outline-0 {
   outline: 0 !important;
+}
+
+.bg-body {
+  background-color: $body-bg !important;
 }
 
 .bg-primary {
@@ -121,10 +118,6 @@ ul {
 
 .zindex-1 {
   z-index: 1;
-}
-
-.bg-secondary {
-  background-color: $color_secondary !important;
 }
 
 // form
@@ -162,15 +155,15 @@ input {
 .social-links {
   li {
     &:not(:last-child) {
-      margin-right: 1.25rem;
+      margin-right: 0rem;
     }
 
     a {
       color: darken($text-dark, 18.43);
       font-size: 18px;
-      border-radius: 50%;
-      width: 35px;
-      height: 35px;
+      border-radius: 4px;
+      width: 2.8rem;
+      height: 2.8rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -186,15 +179,12 @@ input {
 // footer
 .footer {
   .copyright {
-
     a {
       color: $text_dark;
 
       &:hover {
         color: $color-primary;
       }
-
-
     }
   }
 }
@@ -300,13 +290,12 @@ input {
       position: relative;
 
       &::before {
-        content: '\f058';
+        content: "\f058";
         font-family: "font awesome 5 free";
         color: $color-primary;
         font-size: 1.125rem;
         margin-right: 0.625rem;
       }
-
     }
   }
 
@@ -372,7 +361,7 @@ input {
     margin: 2rem 0;
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 4px;
   }
 
   .notices p {
@@ -388,6 +377,7 @@ input {
     font-weight: 900;
     content: "\f05a";
     left: 0.7rem;
+    font-size: 90%;
   }
 
   .notices.note p {
@@ -455,7 +445,7 @@ input {
     border-left: 4px solid $color-primary;
     margin: 2rem 0;
     font-weight: 400;
-    background-color: rgba(237, 237, 237, .6);
+    background-color: rgba(237, 237, 237, 0.6);
     font-style: italic;
 
     p {
@@ -475,6 +465,9 @@ input {
   code {
     margin-bottom: 0 !important;
     font-size: 100%;
+    span {
+      margin-bottom: 0;
+    }
   }
 
   .gallery-item img {
@@ -517,9 +510,8 @@ input {
     }
 
     .nav-link {
-      padding: 0.3125rem 2.625rem;
+      padding: 0.5125rem 2.625rem;
       text-transform: capitalize;
-      font-weight: 600;
       color: $text-dark;
 
       &:hover,
@@ -540,12 +532,12 @@ input {
   }
 }
 
-
 // accordion
 .accordion {
   .accordion-button {
     font-size: 1rem;
     padding: 0px 1.25rem;
+    color: $dark;
 
     &:not(.collapsed) {
       background-color: transparent;
@@ -572,8 +564,8 @@ input {
   }
 
   &-item:last-of-type {
-    border-bottom-right-radius: .5rem;
-    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
   }
 }
 
@@ -584,9 +576,9 @@ input {
   .page-link {
     border: 0;
     background-color: $color-secondary;
-    border-radius: 50% !important;
-    height: 2.1875rem;
-    width: 2.1875rem;
+    border-radius: 4px !important;
+    height: 2.8rem;
+    width: 2.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -610,6 +602,7 @@ input {
 
     &:hover {
       color: $text_light;
+      background-color: transparent;
     }
   }
 
@@ -623,6 +616,15 @@ input {
     &.next {
       margin-left: 36px;
     }
+  }
+}
+.dark .pagination .page-link {
+  color: rgba($white, 0.6);
+  background-color: $dark-body-bg;
+  &.active,
+  &:hover {
+    background-color: $color-primary;
+    color: $white;
   }
 }
 

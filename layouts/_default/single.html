@@ -4,15 +4,17 @@
 {{ if or (eq .Section "post") (eq .Section "posts") (eq .Section "blog") (eq .Section "blogs") (eq .Section "news") (eq
 .Section "categories") (eq .Section "tags") }}
 
-<section class="section">
+<section class="section bg-white">
   <div class="container">
     <div class="row section pt-0">
       <div class="col-12 col-lg-10 mx-auto">
-        {{ partial "images/image.html" (dict "Src" .Params.image "Class" "mb-4 rounded-6 w-100" )}}
+        {{ partial "images/image.html" (dict "Src" .Params.image "Class" "mb-5 rounded w-100" )}}
         <div class="mb-4">
-          <h1 class="h2 mb-2">{{.Title}}</h1>
+          <h1 class="h2 fw-light mb-3">{{.Title}}</h1>
           <div class="d-flex">
-            <span>{{ time.Format ":date_long" .PublishDate }} | <span>{{ .ReadingTime }} {{ i18n `min_read` }}</span></span>
+            <span>{{ time.Format ":date_long" .PublishDate }}</span>
+            <span class="px-3">|</span>
+            <span>{{ .ReadingTime }} {{ i18n `min_read` }}</span>
   
             <ul class="post-meta list-unstyle">
               <li class="text-capitalize ms-4">categories : {{ range .Params.categories }}
@@ -54,16 +56,16 @@
             </div>
           </div>
 
-          <div class="card-body px-0">
-            <ul class="post-meta">
+          <div class="card-body">
+            <ul class="post-meta mb-2">
               {{ range .Params.categories }}
-              <li>
-                <a href="{{`categories` | relURL}}/{{. | urlize | lower}}">{{ . }}</a>
-              </li>
+              <li><a class="text-uppercase" href="{{`categories` | relURL}}/{{. | urlize | lower}}">
+                {{ . }}
+              </a></li>
               {{ end }}
             </ul>
-            <h2 class="h5"><a class="post-title" href="{{.RelPermalink}}">{{ .Title }} </a></h2>
-            <p class="card-text">{{ .Summary }}</p>
+            <h2 class="h4 fw-light mb-3"><a class="post-title" href="{{.RelPermalink}}">{{ .Title }} </a></h2>
+            <p class="card-text mb-4">{{ .Summary | truncate 80 }}</p>
             <a class="btn btn-outline-primary btn-sm" href="{{.RelPermalink}}">{{i18n `read_more`}}</a>
           </div>
         </div>

@@ -8,16 +8,16 @@
 ######################### site variables ##############################
 # customize your color and font from here.
 [params.variables]
-color_primary = "#0066FF"
-color_secondary = "#F2F6FF"
-body_color = "#fff"
+color_primary = "#dc6f6e"
+color_secondary = "#fbf9f8"
+body_color = "#fbf9f8"
 text_color = "#777"
 text_dark = "#1E2740"
 text_light = "#666666"
 border_color = "#E8E8E8"
-dark_body_color = "#121212"
+dark_body_color = "#051b29"
 dark_text_color = "#cbcbcb"
-dark_text_light = "#959595"
+dark_text_light = "#bbbbbb"
 dark_text_dark = "#fff"
 dark_border_color = "#222"
 black = "#000"
@@ -42,7 +42,7 @@ font_scale = "1.25" # default is "majorThird": 1.25
 
 # go to https://fonts.google.com/ to find the font you want to use. select your font and copy only the bold part from the URL. and paste it here.
 # example: "Work+Sans:wght@400;500;600"
-font_primary = "Open+Sans:wght@400;500;600;700;800" 
+font_primary = "Poppins:wght@400;500;600" 
 font_primary_type = "sans-serif" # [serif/sans-serif]
 font_secondary = ""
 font_secondary_type = "" # [serif/sans-serif]

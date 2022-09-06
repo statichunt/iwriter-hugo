@@ -14,7 +14,7 @@
     <!-- Previous page. -->
     {{ if $paginator.HasPrev }}
     <li class="page-item prev d-flex align-items-center">
-      <a class="page-link" href="{{ $paginator.Prev.URL }}" aria-label="Pagination Arrow"><i
+      <a class="page-link" href="{{ $paginator.Prev.URL }}#post" aria-label="Pagination Arrow"><i
           class="fas fa-arrow-left me-3"></i>Previous
       </a>
     </li>
@@ -51,7 +51,7 @@
     <!-- Output page numbers. -->
     {{ if eq ($.Scratch.Get "page_number_flag") true }}
     <li class="page-item">
-      <a href="{{ .URL }}" class="page-link {{if eq . $paginator}}active{{end}}">
+      <a href="{{ .URL }}#post" class="page-link {{if eq . $paginator}}active{{end}}">
         {{ .PageNumber }}
       </a>
     </li>
@@ -60,7 +60,7 @@
     <!-- Next page. -->
     {{ if $paginator.HasNext }}
     <li class="page-item next d-flex align-items-center">
-      <a class="page-link arrow" href="{{ $paginator.Next.URL }}" aria-label="Pagination">Next<i
+      <a class="page-link arrow" href="{{ $paginator.Next.URL }}#post" aria-label="Pagination">Next<i
           class="fas fa-arrow-right ms-3"></i>
       </a>
     </li>

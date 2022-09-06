@@ -1,21 +1,18 @@
 .navigation {
-  padding: 25px 0;
-
   @include desktop {
-    padding: 5px 0;
-
+    padding: 10px 0;
+    .navbar-nav {
+      padding: 8px 0;
+    }
     .navbar-light .navbar-nav .nav-item {
       margin-right: 0;
       line-height: 40px;
     }
   }
-
   .navbar-brand {
     font-size: 0;
-
     img {
-      width: 100px;
-      height: 24px;
+      width: 150px;
     }
   }
 }
@@ -23,7 +20,6 @@
 .navbar-bg {
   background: $white;
 }
-
 .content-dark {
   display: none;
 }
@@ -31,13 +27,12 @@
 // for color
 .navbar-light .navbar-nav .nav-item {
   .nav-link {
-    color: $text-dark;
+    color: rgba($text-dark, 0.7);
     font-size: 16px;
     text-transform: capitalize;
-
-    &:hover {
-      color: $text-dark;
-    }
+  }
+  &:hover .nav-link {
+    color: $text-dark;
   }
 
   &.active {
@@ -45,7 +40,6 @@
       color: $color-primary;
     }
   }
-
   &:not(last-child) {
     margin-right: 22px;
   }
@@ -55,45 +49,53 @@
   box-shadow: none;
 }
 
-@include desktop {}
-
 // dropdown
 .dropdown-menu {
   padding: 0.7rem;
   min-width: 12rem;
-  transition: .3s;
-
+  transition: 0.3s;
+  margin-left: -1rem;
+  background-color: $color-secondary;
   @media (min-width: 992px) {
     opacity: 0;
     visibility: hidden;
     display: block;
     border: 0;
     background-color: $white;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
-    top: 40px;
-
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    top: 80%;
+    border-radius: 8px;
+    &[data-bs-popper] {
+      top: 80%;
+      left: 0;
+      margin-top: 0;
+    }
   }
-
+  @include desktop {
+    border: 0;
+    margin-left: 0 !important;
+  }
   .dropdown-item {
-    border-radius: 0.5rem;
-    color: $text-dark;
-
+    border-radius: 4px;
+    color: rgba($text-dark, 0.7);
     @include desktop {
       text-align: center;
+      padding: 0;
+      line-height: 2;
     }
-
     &.active,
     &:hover {
       background-color: transparent;
-      color: $color-primary;
+      color: $text-dark;
     }
-
     &:focus {
       background-color: transparent;
     }
+    &.active {
+      color: $color-primary;
+    }
   }
 }
-
 
 @media (min-width: 992px) {
   .dropdown:hover .dropdown-menu {
@@ -102,27 +104,28 @@
     display: block;
   }
 }
-
 .dropdown-toggle {
   display: inline-flex;
-
   &::after {
+    font-size: 13px;
     font-family: $font_icon;
-    content: '\f078';
+    content: "\f078";
     border: 0;
     position: relative;
-    right: -8px;
-
+    right: -4px;
+    top: 4px;
+    @include desktop {
+      top: 0;
+    }
   }
 }
 
 // for padding
 .navbar-expand-lg .navbar-nav .nav-item {
   .nav-link {
-    padding: 0 0.7rem;
-
-    @include tablet {
-      padding: 0.5rem;
+    padding: 1.8rem 0.5rem;
+    @include desktop {
+      padding: 00 0.5rem;
     }
   }
 }
@@ -132,7 +135,6 @@
   border: 0;
   background: transparent;
 }
-
 .search-wrapper {
   position: absolute;
   top: 0;
@@ -155,26 +157,23 @@
   width: 100%;
   border: 0;
   background: $white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 0;
-  border: 1px solid $border-color;
   border-radius: 0.6rem;
-  padding-right: 1rem !important;
 }
 
 .search-close {
   position: absolute;
-  right: 16px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   border: 0;
   background: transparent;
   page-break-after: 10px;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 // switch
-
 .switch {
   cursor: pointer;
   margin: 0 18px 24px;
@@ -202,53 +201,33 @@
       height: 18px !important;
     }
   }
-
 }
-
-
 
 // select-language
 .select-language {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-image: linear-gradient(45deg, transparent 50%, $text-dark 50%), linear-gradient(135deg, $text-dark 50%, transparent 50%), linear-gradient(to right, transparent, transparent);
-  background-position: calc(100% - 20px)calc(1em + 2px), calc(100% - 15px)calc(1em + 2px), 100% 0;
-  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
-  background-repeat: no-repeat;
-  border-radius: 4px;
-  display: inline-block;
-  font: inherit;
   line-height: 1.5em;
-  padding: 8px 36px 0 10px;
-  margin-top: 0 !important;
+  padding: 5px;
+  text-transform: uppercase;
 }
-
 
 // dark
 .dark {
-
   .navbar-light .navbar-nav .nav-item.active .nav-link,
-  .navbar-light .navbar-nav .nav-item .nav-link:hover {
+  .navbar-light .navbar-nav .nav-item:hover .nav-link {
     color: $dark-text-dark;
   }
 
-  .navbar-bg{
-    background-color: lighten($dark-body-bg, 3%) ;
+  .search-box {
+    color: $white;
   }
-
 
   .navbar-light .navbar-nav .nav-item .nav-link {
     color: $dark-text-light;
   }
 
-  .search i,
+  .search svg,
   .select-language {
     color: $dark-text-dark;
-  }
-
-  .select-language {
-    background-image: linear-gradient(45deg, transparent 50%, $light 50%), linear-gradient(135deg, $light 50%, transparent 50%), linear-gradient(to right, transparent, transparent);
   }
 
   .navbar-light .navbar-toggler-icon {
@@ -256,7 +235,7 @@
   }
 
   .dropdown-menu {
-    background-color: $black;
+    background-color: #152a38;
 
     .dropdown-item {
       color: $dark-text-light;
@@ -267,12 +246,7 @@
 
       &.active,
       &:hover {
-        background-color: $dark-body-bg;
         color: $dark-text-dark;
-      }
-
-      &:focus {
-        background-color: darken($text-dark, 12.94);
       }
     }
   }

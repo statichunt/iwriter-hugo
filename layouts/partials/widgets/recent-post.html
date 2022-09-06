@@ -3,20 +3,18 @@
   <h5 class="widget-title"><span>{{ "latest article" }}</span></h5>
   <!-- post-item -->
   {{ range first 3 ( where site.RegularPages "Section" "blog" )}}
-  <div class="card widget-list mb-3">
+  <div class="card bg-white p-2 widget-list mb-3">
     <div class="row g-0 align-items-center">
+      {{ if .Params.image }}
       <div class="col-3">
         <a href="{{ .RelPermalink }}">
-          {{ if .Params.image }}
-          {{ partial "images/image.html" (dict "Src" .Params.image "Size" "90x60" "Class" "rounded-6")}}
-          {{ else }}
-          <p class="recent-thumb-alt mr-3">{{.Title | title}}</p>
-          {{ end }}
+          {{ partial "images/image.html" (dict "Src" .Params.image "Command" "Crop" "Size" "90x80" "Class" "rounded")}}
         </a>
       </div>
+      {{ end }}
       <div class="col-9">
         <div class="card-body p-0 ps-4">
-          <h5 class="h6 mb-0"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h5>
+          <h5 class="h6 mb-0 fw-light lh-sm mt-1"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h5>
           <small>{{ time.Format ":date_long" .PublishDate }}</small>
         </div>
       </div>

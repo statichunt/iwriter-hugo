@@ -4,14 +4,13 @@
   {{ if isset site.Taxonomies "categories" }}
   {{ if not (eq (len site.Taxonomies.categories) 0) }}
 
-  <ol class="list-group list-unstyled ps-0 widget-list">
+  <ul class="row g-2 list-unstyled">
     {{ range $name, $items := site.Taxonomies.categories }}
-    <li class="list-group-item">
-      <a class="d-flex justify-content-between align-items-start" href="{{ .Page.RelPermalink }}"{{ if (and (eq $.Page.Kind `term`) (eq $.Page.Type `categories`) (eq $.Page.Title .Page.Title)) }} class="active"{{ end }}>{{ .Page.Title }}  <span class="badge  rounded-pill">({{ len $items }})</span> </a>
-     
+    <li class="col">
+      <a class="d-flex justify-content-between align-items-center bg-white rounded px-3 py-2" href="{{ .Page.RelPermalink }}"{{ if (and (eq $.Page.Kind `term`) (eq $.Page.Type `categories`) (eq $.Page.Title .Page.Title)) }} class="active"{{ end }}>{{ .Page.Title | humanize }}  <span class="badge rounded ms-2">({{ len $items }})</span> </a>
     </li>
     {{ end }}
-  </ol>
+  </ul>
 
   {{ end }}
   {{ end }}

@@ -1,7 +1,10 @@
 /*  typography */
 
-html {
+body {
   font-size: $font-size;
+  @include mobile {
+    font-size: 92% !important;
+  }
 }
 
 body {
@@ -32,7 +35,7 @@ small,
 }
 
 // List in descending order to prevent extra sort function
-$type-levels: 6,5,4,3,2,1;
+$type-levels: 6, 5, 4, 3, 2, 1;
 
 @each $level in $type-levels {
   $font-size: $font-size * $font-scale;
@@ -40,32 +43,30 @@ $type-levels: 6,5,4,3,2,1;
   // Output heading styles
   h#{$level},
   .h#{$level} {
-    font-size: calc(#{$font-size} * .80);
-    line-height: calc(2px + 2ex + 2px);
+    font-size: calc(#{$font-size} * 0.8);
+    line-height: calc(5px + 2ex + 2px);
     margin-bottom: 0.65em;
 
     // responsive for h1, h2, h3, h4
     &:not(h5, .h5, h6, .h6) {
-
       @include desktop {
-        font-size: calc(#{$font-size} * .90);
+        font-size: calc(#{$font-size} * 0.9);
         margin-bottom: 0.55em;
       }
 
       @include tablet {
-        font-size: calc(#{$font-size} * .60);
+        font-size: calc(#{$font-size} * 0.8);
       }
     }
 
-
     // responsive for h5, h6
     @include desktop {
-      font-size: calc(#{$font-size} * .95);
+      font-size: calc(#{$font-size} * 0.95);
       margin-bottom: 0.55em;
     }
 
     @include tablet {
-      font-size: calc(#{$font-size} * .90);
+      font-size: calc(#{$font-size} * 0.9);
     }
   }
 }

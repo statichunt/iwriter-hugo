@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<section class="section border-top">
+<section class="section border-top bg-white">
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
@@ -17,17 +17,17 @@
                   <span class="text-uppercase">{{ time.Format ":date_long" .PublishDate }}</span>
                 </div>
               </div>
-
-              <div class="card-body px-0">
-                <ul class="post-meta">
+    
+              <div class="card-body">
+                <ul class="post-meta mb-2">
                   {{ range .Params.categories }}
-                  <li>
-                    <a href="{{`categories` | relURL}}/{{. | urlize | lower}}">{{ . }}</a>
-                  </li>
+                  <li><a class="text-uppercase" href="{{`categories` | relURL}}/{{. | urlize | lower}}">
+                    {{ . }}
+                  </a></li>
                   {{ end }}
                 </ul>
-                <h2 class="h5"><a class="post-title" href="{{.RelPermalink}}">{{ .Title }} </a></h2>
-                <p class="card-text">{{ .Summary }}</p>
+                <h2 class="h3 fw-light mb-3"><a class="post-title" href="{{.RelPermalink}}">{{ .Title }} </a></h2>
+                <p class="card-text mb-4">{{ .Summary }}</p>
                 <a class="btn btn-outline-primary btn-sm" href="{{.RelPermalink}}">{{i18n `read_more`}}</a>
               </div>
             </div>
@@ -39,10 +39,12 @@
         {{ partial "components/custom-pagination.html" . }}
       </div>
 
-      <div class="col-lg-4 ps-xl-5">
-        <!-- widget -->
-        {{ $widget:= site.Params.widgets.sidebar }}
-        {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
+      <div class="col-lg-4">
+        <div class="bg-body ms-xl-3 p-4 rounded">
+          <!-- widget -->
+          {{ $widget:= site.Params.widgets.sidebar }}
+          {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
+        </div>
       </div>
 
 

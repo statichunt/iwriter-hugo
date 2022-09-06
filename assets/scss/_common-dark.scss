@@ -1,12 +1,10 @@
 // theme switcher
 .theme-switcher {
   cursor: pointer;
-  margin-left: 20px;
-
+  user-select: none;
   .sun {
     opacity: 0;
   }
-
   .moon,
   .sun {
     transition: 0.35s;
@@ -17,11 +15,9 @@
   svg {
     stroke: $white;
   }
-
   .sun {
     opacity: 1;
   }
-
   .moon {
     opacity: 0;
   }
@@ -48,15 +44,21 @@ body {
 // other css
 .dark {
   background-color: $dark-body-bg;
-
-  .bg-secondary {
-    background-color: darken($dark-body-bg, 3%) !important;
+  .bg-body {
+    background-color: $dark-body-bg !important;
   }
-
-  .footer .copyright a,
-  .accordion-button,
-  .code-tabs .nav-item.active .nav-link {
+  .bg-white {
+    background-color: lighten($dark-body-bg, 2%) !important;
+  }
+  .footer a,
+  .accordion-button {
     color: $dark-text-dark;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  .code-tabs .nav-item.active .nav-link {
+    color: $white;
   }
   .card {
     background-color: transparent;
@@ -71,18 +73,17 @@ body {
   .accordion-item,
   .accordion-button,
   blockquote {
-    background-color: darken($dark-body-bg, 3%);
+    background-color: darken($dark-body-bg, 2%);
   }
 
   .content pre {
-    background-color: darken($dark-body-bg, 3%) !important;
+    background-color: darken($dark-body-bg, 2%) !important;
   }
 
   .social-links {
     a {
       &:hover {
-        background: $white;
-        color: $text-dark;
+        color: $white !important;
       }
     }
   }
@@ -134,7 +135,6 @@ body {
   .border-right,
   .border-bottom,
   .content hr,
-  .search-box,
   .code-tabs .nav-item,
   .content table,
   .content thead tr,
@@ -146,10 +146,12 @@ body {
   }
 
   .form-control,
-  textarea,
-  .search-box,
+  textarea {
+    color: $white;
+    background-color: $dark-body-bg !important;
+  }
   .widget input {
-    background-color: darken($dark-body-bg, 3%) !important;
+    background-color: lighten($dark-body-bg, 2%) !important;
     color: $dark-text-dark;
 
     &::placeholder {

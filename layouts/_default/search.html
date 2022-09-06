@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<section class="section">
+<section class="section bg-white">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-10">
@@ -13,40 +13,30 @@
             </script>
           </mark>
         </h1>
-        <div id="search-results" class="row">
-
+        <div id="search-results" class="row row-cols-1 row-cols-md-2 row-cols-md-3 gy-4">
+          
         </div>
         <script id="search-result-template" type="text/x-js-template">
-          <div class="py-4 border-bottom" id="summary-${key}">
-            <div class="row row-cols-1 row-cols-md-2 gy-4">
-            <div class="col">
-              <div class="card blog-card mb-3">
-                <div class="row g-0">
-                    <div class="card-img position-relative">
-                       ${image}
-                      <div class="post-info">
-                        <span class="text-uppercase">{{ time.Format ":date_long" .PublishDate }}</span>
-                      </div>
-                    </div>
-
-                  <div class="card-body">
-                      <ul class="post-meta">
-                        <li>
-                          ${ isset tags }<p>Tags: ${tags}</p>${ end }
-                          ${ isset categories }<p>Categories: ${categories}</p>${ end }
-                        </li>
-                      </ul>
-                      <h2 class="h5"><a class="post-title" href="${link}">${title}</a></h2>
-                      <p>${snippet}</p>
-                      <a class="btn btn-outline-primary btn-sm" href="${link}">{{i18n `read_more`}}</a>
-                    </div>
-                  </div>
+          <div class="col" id="summary-${key}">
+            <div class="blog-card card mb-3">
+              <div class="card-img position-relative">
+                ${image}
+                <div class="post-info">
+                  <span class="text-uppercase">{{ time.Format ":date_long" .PublishDate }}</span>
+                </div>
+              </div>
+    
+              <div class="card-body">
+                <ul class="post-meta mb-2">
+                  ${ isset tags }<p>Tags: ${tags}</p>${ end }
+                  ${ isset categories }<p>Categories: ${categories}</p>${ end }
+                </ul>
+                <h2 class="h4 fw-light mb-3"><a class="post-title" href="${link}">${title} </a></h2>
+                <p class="card-text mb-4">${snippet}</p>
+                <a class="btn btn-outline-primary btn-sm" href="${link}">{{i18n `read_more`}}</a>
               </div>
             </div>
-            </div>
-            
           </div>
-          
         </script>
       </div>
     </div>

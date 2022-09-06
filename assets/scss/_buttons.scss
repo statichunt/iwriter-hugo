@@ -3,42 +3,37 @@
   font-size: 1rem;
   font-family: $font-primary;
   text-transform: capitalize;
-  padding: 0.7em 1em;
-  border-radius: 6px;
+  padding: 0.8em 1.5em;
   border: 1px solid;
   position: relative;
   z-index: 1;
   transition: 0.2s ease;
-  font-weight: 600;
+  overflow: hidden;
+
+  &-sm {
+    font-size: 90% !important;
+    padding: 0.6em 1.3em;
+  }
+  @include mobile {
+    padding: 0.7em 1.4em;
+  }
 
   &::before {
     position: absolute;
-    left: 0;
+    left: -15px;
     width: 0;
     height: 100%;
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, 0.2);
     z-index: -1;
     top: 0;
     content: "";
-    border-radius: 5px;
     border-color: transparent;
-    transition: .3s;
+    transition: 0.3s;
+    transform: skewX(25deg);
   }
 
   &:hover:before {
-    width: 100%;
-  }
-
-  &-lg {
-    padding: 10px 36px;
-  }
-
-  &-md {
-    padding: 10px 24px;
-  }
-
-  &-sm {
-    padding: 5px 16px;
+    width: 120%;
   }
 
   &:hover,
@@ -61,17 +56,18 @@
   &.active,
   &:focus,
   &.focus {
-    border-color: rgba(0, 0, 0, .3) !important;
+    border-color: rgba(0, 0, 0, 0.3) !important;
+    background-color: $color-primary;
   }
 }
 
 .btn-outline-primary {
   background: transparent;
   color: $color-primary;
-  border-color: $color-primary;
+  border-color: rgba($color-primary, 0.2);
   font-size: 1rem;
 
-  &::before{
+  &::before {
     background: $color-primary;
   }
 
@@ -80,6 +76,7 @@
   &.active,
   // &:focus,
   &.focus {
+    border-color: $color-primary;
     background: transparent !important;
     color: $white;
   }

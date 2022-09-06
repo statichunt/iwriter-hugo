@@ -1,5 +1,5 @@
 <!-- navigation -->
-<header class="{{if site.Params.navbar_fixed}}sticky-top navbar-bg{{end}} navigation">
+<header class="{{if site.Params.navbar_fixed}}sticky-top bg-body{{end}} navigation">
   <div class="container">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light flex-lg-nowrap">
@@ -34,8 +34,8 @@
 
         {{ if site.Params.theme_switcher }}
         <!-- theme switcher mobile -->
-        <div class="theme-switcher d-inline-block d-lg-none me-3">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="20" height="20" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="#000">
+        <div class="theme-switcher px-3 px-lg-4 d-inline-block d-lg-none">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="18" height="18" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="#000">
             <mask id="m">
               <circle class="masker" cx="7.5" cy="7.5" r="8.5" fill="#fff" />
             </mask>
@@ -49,19 +49,28 @@
 
         {{ if site.Params.search }}
         <!-- search -->
-        <div class="search px-4 d-inline-block d-lg-none">
-          <button id="searchOpen-mobile" aria-label="search" class="search-btn"><i class="fas fa-search"></i></button>
+        <div class="search d-inline-block d-lg-none">
+          <button id="searchOpen-mobile" aria-label="search" class="search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="22" width="22" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </button>
           <div class="search-wrapper">
             <form action="{{ `search`| relLangURL }}" class="h-100">
-              <input class="search-box px-4" id="search-query" name="s" type="search"  placeholder="Type & Hit Enter...">
+              <input class="search-box" id="search-query" name="s" type="search"  placeholder="Type & Hit Enter...">
             </form>
-            <button id="searchClose-mobile" class="search-close"><i class="fas fa-times"></i></button>
+            <button id="searchClose-mobile" class="search-close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+              </svg>
+            </button>
           </div>
         </div>
         {{ end }}
 
         <!-- navbar toggler -->
-        <button aria-label="navbar toggler" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+        <button aria-label="navbar toggler" class="navbar-toggler border-0 pe-0" type="button" data-bs-toggle="collapse"
           data-bs-target="#navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -127,8 +136,8 @@
 
          {{ if site.Params.theme_switcher }}
         <!-- theme switcher -->
-        <div class="theme-switcher d-none d-lg-inline-block">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="20" height="20" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="#000">
+        <div class="theme-switcher px-3 px-lg-4 d-none d-lg-inline-block">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="18" height="18" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="#000">
             <mask id="m">
               <circle class="masker" cx="7.5" cy="7.5" r="8.5" fill="#fff" />
             </mask>
@@ -142,14 +151,22 @@
          
         {{ if site.Params.search }}
         <!-- search -->
-        <div class="search px-4 d-none d-lg-inline-block">
-          <button id="searchOpen" aria-label="search" class="search-btn"><i class="fas fa-search"></i></button>
+        <div class="search d-none d-lg-inline-block">
+          <button id="searchOpen" aria-label="search" class="search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="22" width="22" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </button>
           <div class="search-wrapper">
             <form action="{{ `search`| relLangURL }}" class="h-100">
-              <input class="search-box px-4" id="search-query" name="s" type="search"
-                placeholder="Type & Hit Enter...">
+              <input class="search-box" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
             </form>
-            <button id="searchClose" class="search-close"><i class="fas fa-times"></i></button>
+            <button id="searchClose" class="search-close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+              </svg>
+            </button>
           </div>
         </div>
         {{ end }}
