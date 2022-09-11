@@ -9,19 +9,10 @@
       line-height: 40px;
     }
   }
-  .navbar-brand {
-    font-size: 0;
-    img {
-      width: 150px;
-    }
-  }
 }
 
 .navbar-bg {
   background: $white;
-}
-.content-dark {
-  display: none;
 }
 
 // for color
@@ -212,6 +203,9 @@
 
 // dark
 .dark {
+  .navbar-brand {
+    color: $white;
+  }
   .navbar-light .navbar-nav .nav-item.active .nav-link,
   .navbar-light .navbar-nav .nav-item:hover .nav-link {
     color: $dark-text-dark;
