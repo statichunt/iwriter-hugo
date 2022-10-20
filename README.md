@@ -1,6 +1,11 @@
-﻿# iWriter Hugo - Personal Blog Theme | [Demo](https://demo.statichunt.com/iwriter-hugo/)
+﻿# - | 
 
-## Features
+<h1 align=center>iWriter Hugo </h1>
+<p align=center>Personal Blog Theme  </p>
+
+<h2 align="center"><a target="_blank" href="https://demo.statichunt.com/iwriter-hugo/" rel="nofollow">Demo</a> | <a  target="_blank" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fdemo.statichunt.com%2Fiwriter-hugo%2F&form_factor=desktop">Page Speed (97%)</a> </h2>
+
+## Key Features
 
 - Google analytics  support
 - Image optimize with Hugo pipe
