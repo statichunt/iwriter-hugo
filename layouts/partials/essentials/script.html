@@ -2,7 +2,7 @@
 {{ if site.Params.theme_switcher }}
 <script>
   var darkMode = {{if eq site.Params.theme_default "dark"}}true{{else}}false{{end}};
-  {{ if eq site.Params.theme_default "automatic" }}
+  {{ if eq site.Params.theme_default "system" }}
   if (window.matchMedia('(prefers-color-scheme: dark)').matches){darkMode = true}
   {{ end }}
   if (localStorage.getItem('theme') === 'dark'){darkMode = true}
