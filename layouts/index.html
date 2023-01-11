@@ -15,7 +15,7 @@
 
         {{if .button.enable}}
         {{with .button}}
-        <a href="{{.RelPermalink}}" class="btn btn-primary">{{ .label }}</a>
+        <a href="{{.link | relLangURL}}" class="btn btn-primary">{{ .label }}</a>
         {{ end }}
         {{ end }}
       </div>

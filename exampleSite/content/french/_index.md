@@ -6,5 +6,5 @@ banner:
   button:
     enable : true
     label : "obtenir un devis"
-    link : "/"
+    link : "contact/"
 ---

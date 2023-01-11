@@ -6,6 +6,6 @@ banner:
   button:
     enable : true
     label : "get a quote"
-    link : "/"
+    link : "contact/"
 
 ---
