@@ -22,8 +22,11 @@ custom_script = ""
 
 mainSections = ["blog"]
 
+# contact form works with https://formspree.io and Netlify
+# use Netlify's contact form functionality
+netlify = true # set to false if using formspree.io
 # contact form action
-contact_form_action = "#" # contact form works with https://formspree.io
+contact_form_action = "#"
 # copyright
 theme_copyright = true
 copyright = "Copyright by your company"

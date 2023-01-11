@@ -8,8 +8,7 @@
         <div class="pb-5">
           {{ .Content }}
         </div>
-        
-        <form action="{{ site.Params.contact_form_action }}" method="post">
+        <form action="{{ site.Params.contact_form_action }}" method="post" {{ with .Params.form_name }}name="{{ . }}"{{ end }} {{ if site.Params.netlify }}data-netlify="true" netlify-honeypot="always-empty"{{ end }}>
           <div class="row g-4">
             <div class="col-md-6 mb-3 mt-0">
               <input type="text" class="form-control" placeholder="{{ i18n `first_name`}}" aria-label="{{ i18n `first_name`}}" name="{{ i18n `first_name`}}" required>
@@ -23,6 +22,9 @@
          
             <div class="col-12 mb-3 mt-0">
               <textarea  rows="7" class="form-control mb-4" placeholder="{{ i18n `message`}}" id="floatingTextarea" name="{{ i18n `message`}}" required></textarea>
+            </div>
+            <div hidden="true">
+              <input type="text" class="form-control" placeholder="Don’t fill this out if you’re human:" name="always-empty">
             </div>
             <div class="col-12 mb-3 mt-0">
               <button type="submit" class="btn btn-primary btn-md">{{ i18n `submit`}}</button>
@@ -39,3 +41,4 @@
 <!--===================== Contact End =====================--> 
 
 {{ end }}
+
