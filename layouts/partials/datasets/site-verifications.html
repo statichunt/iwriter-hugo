@@ -1,14 +1,18 @@
-<!-- google site verification -->
 {{ with site.Params.site_verification.google }}
+<!-- google site verification -->
 <meta name="google-site-verification" content="{{ . }}" />
 {{ end }}
 
-<!-- bing site verification -->
 {{ with site.Params.site_verification.baidu }}
+<!-- bing site verification -->
 <meta name="msvalidate.01" content="{{ . }}" />
 {{ end }}
 
-<!-- baidu site verification -->
 {{ with site.Params.site_verification.baidu }}
+<!-- baidu site verification -->
 <meta name="baidu-site-verification" content="{{ . }}" />
 {{ end }}
+
+{{ with site.Params.site_verification.mastodon }}
+<!-- Mastodon site verification -->
+<link rel="me" href="{{ . }}" type="text/html">{{ end }}
