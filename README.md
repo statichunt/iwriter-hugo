@@ -25,6 +25,7 @@
 - GDPR consent enabled
 - Open graph meta tag
 - Twitter card meta tag
+- Mastodon site verification
 
 ## Local development
 

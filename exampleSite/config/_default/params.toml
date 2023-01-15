@@ -68,9 +68,10 @@ username = ""  # your username
 
 # site verifications
 [site_verification]
-google = "" # Your verification code
-bing = ""   # Your verification code
-baidu = ""  # Your verification code
+google = ""   # Your verification code
+bing = ""     # Your verification code
+baidu = ""    # Your verification code
+mastodon = "" # The URL to your profile a la https://example.com/@username
 
 
 # cookies
@@ -93,6 +94,11 @@ link = "#"
 [[social]]
 title = "twitter"
 icon = "fab fa-twitter" # fontawesome icon pack : https://fontawesome.com/icons/
+link = "#"
+
+[[social]]
+title = "mastodon"
+icon = "fab fa-mastodon" # fontawesome icon pack : https://fontawesome.com/icons/
 link = "#"
 
 [[social]]
