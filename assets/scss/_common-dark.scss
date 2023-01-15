@@ -76,6 +76,14 @@ body {
     background-color: darken($dark-body-bg, 2%);
   }
 
+  .content a {
+    color: $dark-text-dark;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
   .content pre {
     background-color: darken($dark-body-bg, 2%) !important;
   }
