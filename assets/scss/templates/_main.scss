@@ -55,7 +55,6 @@
     }
   }
 }
-
 .blog-card {
   .card-img {
     height: 100%;
@@ -104,7 +103,6 @@
     }
   }
 }
-
 .widget {
   &:not(:last-child) {
     margin-bottom: 35px;
@@ -177,6 +175,7 @@
   }
 }
 
+// dark
 .dark {
   .widget-search {
     input {
@@ -186,27 +185,6 @@
       }
     }
   }
-}
-
-// instafeed
-.instagram-post {
-  padding: 0 10px;
-
-  img {
-    border-radius: 8px;
-    height: 185px;
-    width: 185px;
-    object-fit: cover;
-  }
-}
-
-.instagram-slider {
-  max-height: 185px;
-  overflow: hidden;
-}
-
-// dark
-.dark {
   .blog-card .post-title,
   .social-links li a {
     color: $dark-text-dark;
