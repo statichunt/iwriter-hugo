@@ -1,31 +1,32 @@
 
 <h1 align=center>iWriter Hugo </h1>
-<p align=center>Personal Blog Theme  </p>
+<p align=center>Personal Blog Theme </p>
 
 <h2 align="center"><a target="_blank" href="https://demo.statichunt.com/iwriter-hugo/" rel="nofollow">Demo</a> | <a  target="_blank" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fdemo.statichunt.com%2Fiwriter-hugo%2F&form_factor=desktop">Page Speed (97%)</a> </h2>
+
+![iWriter](images/screenshot.jpg)
 
 
 ## Key Features
 
-- Google analytics  support
+- Supported Analytics(Google, Baidu, Matomo, Plausible, Counter)
+- Google AdSense support
+- Google Tag Maneger
 - Image optimize with Hugo pipe
-- Multiple language support(Fr, En)
+- Multiple language support(Fr, En and more)
 - CSS and Js bundle with Hugo pipe
-- Netlify settings predefine
-- Forestry cms pre-configured
+- Netlify and Vercel settings predefine
+- Forestry CMS pre-configured
 - Google font loads from Webfont loader
-- single author available
 - Caching enabled
 - Google page speed optimized
 - Color and fonts variable in the config file
 - Contact form Support
 - Search by fuse.js
 - Sidebar option (True or false)
-- Instagram feed available
 - GDPR consent enabled
 - Open graph meta tag
 - Twitter card meta tag
-- Mastodon site verification
 
 ## Local development
 
@@ -91,12 +92,7 @@ share those images.
 ## Special Thanks
 
 - [Bootstrap](https://getbootstrap.com)
-- [Jquery](https://jquery.com)
 - [Font Awesome Icons](https://fontawesome.com)
 - [Fuse Js](https://fusejs.io)
-- [Mark Js](https://markjs.io)
-- [Venobox](https://veno.es/venobox)
-- [Slick Slider](https://kenwheeler.github.io/slick/)
-- [Instafeed](https://instafeedjs.com)
 - [Google Fonts](https://fonts.google.com/)
 - [All Contributors](https://github.com/statichunt/iWriter-hugo/graphs/contributors)
