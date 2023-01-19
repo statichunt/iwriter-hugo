@@ -125,15 +125,15 @@ ipsum dolor sit amet, consetetur sadipscing elitr,
 <hr>
 
 ### Collapse :
-{{< collapse "collapse 1" >}}
+{{< collapse "Collapse 1" >}}
   This is a simple collapse
 {{< /collapse >}}
 
-{{< collapse "collapse 2" >}}
+{{< collapse "Collapse 2" >}}
   This is a simple collapse
 {{< /collapse >}}
 
-{{< collapse "collapse 3" >}}
+{{< collapse "Collapse 3" >}}
   This is a simple collapse
 {{< /collapse >}}
 <hr>

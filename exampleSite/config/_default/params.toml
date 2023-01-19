@@ -9,41 +9,43 @@ logo_dark = "images/logo-white.png"
 logo_width = "120px"
 # logo text will only show when logo is missing.
 logo_text = "iWriter"
+
 # navbar fixed to top
 navbar_fixed = true
-# OpenGraph / Twitter Card metadata
-description = "This is meta description"
-author = "Statichunt"
-image = "images/logo.png"                # this image will be used as fallback if a page has no image of its own
-# contact form action
-contact_form_action = "#" # contact form works with https://formspree.io
 # search
 search = true
 # Sidebar
 sidebar = "true" # sidebar value (true or false)
+
+# custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>" 
+custom_script = ""
+
+mainSections = ["blog"]
+
+# contact form action
+contact_form_action = "#" # contact form works with https://formspree.io
 # copyright
 theme_copyright = true
 copyright = "Copyright by your company"
-# custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>" 
-custom_script = ""
+
 # google tag manager, see https://developers.google.com/tag-manager/
 google_tag_manager = "" # example: G-XXXXXXXXXX
-mainSections = ["blog"]
 
 # theme-mode
 theme_switcher = true
 theme_default = "system" # available options [light/dark/system]
 
+# seo meta data for OpenGraph / Twitter Card
+[metadata]
+keywords = ["Hugo", "Blog", "Statichunt", "iWriter"]
+description = "iWriter is a blog template based on Bootstrap and powered by Hugo"
+author = "Statichunt"
+image = "images/og-image.jpg"      # this image will be used as fallback if a page has no image of its own
+
 # Preloader
 [preloader]
 enable = true
 preloader = "" # use jpg, png, svg or gif format.
-
-
-# Instagram feed
-[instafeed]
-enable = false
-access_token = "IGQVJYeUk4YWNIY1h4OWZANeS1wRHZARdjJ5QmdueXN2RFR6NF9iYUtfcGp1NmpxZA3RTbnU1MXpDNVBHTzZAMOFlxcGlkVHBKdjhqSnUybERhNWdQSE5hVmtXT013MEhOQVJJRGJBRURn"
 
 # matomo tracking: see https://matomo.org/
 [matomo]
@@ -72,14 +74,6 @@ google = ""   # Your verification code
 bing = ""     # Your verification code
 baidu = ""    # Your verification code
 mastodon = "" # The URL to your profile a la https://example.com/@username
-
-
-# cookies
-[cookies]
-enable = false
-expire_days = 2
-content = "This site uses cookies. By continuing to use this website, you agree to their use."
-button = "I Accept"
 
 ######################## sidebar widgets #########################
 [widgets]

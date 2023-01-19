@@ -63,9 +63,11 @@ body {
   .card {
     background-color: transparent;
   }
-  .content thead,
+  .content thead {
+    background-color: transparent;
+  }
   .accordion .accordion-body {
-    background-color: $dark-body-bg;
+    color: $white;
   }
 
   .content tbody tr:nth-child(odd),
@@ -73,19 +75,23 @@ body {
   .accordion-item,
   .accordion-button,
   blockquote {
-    background-color: darken($dark-body-bg, 2%);
+    background-color: rgba($white, 0.05);
   }
 
-  .content a {
-    color: $dark-text-dark;
+  .content {
+    a {
+      color: $dark-text-dark;
 
-    &:hover {
-      color: $color-primary;
+      &:hover {
+        color: $color-primary;
+      }
     }
-  }
-
-  .content pre {
-    background-color: darken($dark-body-bg, 2%) !important;
+    pre {
+      background-color: darken($dark-body-bg, 2%) !important;
+    }
+    hr {
+      border-color: $white !important;
+    }
   }
 
   .social-links {
@@ -96,8 +102,10 @@ body {
     }
   }
 
+  .content thead th {
+    color: $white;
+  }
   p,
-  .content thead th,
   .code-tabs .nav-item .nav-link,
   .content tbody tr td:nth-child(1) {
     color: $dark-text-light;
@@ -134,14 +142,14 @@ body {
   .border-left,
   .border-right,
   .border-bottom,
-  .content hr,
   .code-tabs .nav-item,
   .content table,
   .content thead tr,
   .content table th,
   .content table td,
   .content tr:not(:last-child),
-  .accordion .accordion-body {
+  .accordion .accordion-body,
+  .accordion-item {
     border-color: $dark-border-color !important;
   }
 

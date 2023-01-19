@@ -99,8 +99,9 @@
   display: inline-flex;
   &::after {
     font-size: 13px;
-    font-family: $font_icon;
-    content: "\f078";
+    font-family: $font-icon;
+    content: "\f107";
+    font-weight: 900;
     border: 0;
     position: relative;
     right: -4px;
@@ -147,10 +148,10 @@
   height: 100%;
   width: 100%;
   border: 0;
-  background: $white;
   font-size: 1.2rem;
   padding: 0;
   border-radius: 0.6rem;
+  appearance: none;
 }
 
 .search-close {
@@ -162,6 +163,7 @@
   background: transparent;
   page-break-after: 10px;
   font-size: 1.2rem;
+  z-index: 2;
 }
 
 // switch

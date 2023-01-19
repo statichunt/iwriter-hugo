@@ -8,7 +8,7 @@
           <mark>
             <script>
               var keyword = (window.location.search).substr(3);
-              var result = keyword.replace("+", " ");
+              var result = keyword.replaceAll("+", " ");
               document.write(result);
             </script>
           </mark>

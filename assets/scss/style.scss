@@ -26,20 +26,14 @@ $font-secondary: '{{replace (replaceRE ":[ital,]*[ital@]*[wght@]*[0-9,;]+" "" .f
 $font-icon: '{{.font_icon | default "Font Awesome 5 Free"}}';
 {{ end }}
 
-@import 'bootstrap/bootstrap';
-
+@import 'templates/bootstrap';
+@import 'preloader';
 @import 'mixins';
-
 @import 'typography';
-
 @import 'buttons';
-
+@import 'tabs';
 @import 'common';
-
 @import 'common-dark';
-
 @import 'templates/navigation.scss';
-
 @import 'templates/main.scss';
-
 @import 'custom.scss';

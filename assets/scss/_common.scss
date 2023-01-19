@@ -13,16 +13,8 @@ body {
 
 /* preloader */
 .preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  transition: 0.3s;
   background-color: $body-bg;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .dark .preloader {
@@ -240,11 +232,7 @@ input {
   }
 
   hr {
-    background-color: transparent;
-    border-bottom: 1px solid $border-color;
-    margin-bottom: 30px;
-    padding-top: 15px;
-    opacity: 1;
+    opacity: 0.2;
   }
 
   h1,
@@ -291,9 +279,9 @@ input {
 
       &::before {
         content: "\f058";
-        font-family: "font awesome 5 free";
+        font-family: $font-icon;
         color: $color-primary;
-        font-size: 1.125rem;
+        font-size: 1rem;
         margin-right: 0.625rem;
       }
     }
@@ -332,7 +320,7 @@ input {
 
     th {
       color: $text-dark;
-      font-weight: 700;
+      font-weight: 500;
     }
 
     tr {
@@ -476,68 +464,70 @@ input {
   }
 }
 
-// code-tab
-.code-tabs {
-  .nav-item {
-    padding-left: 0;
-    margin-bottom: 0;
-    display: flex;
-    align-items: center;
-    border: 1px solid $border-color;
+// tab
+.tab {
+  &-panel {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 
-    &:first-child {
-      border-radius: 8px 0px 0px 8px;
+    pre {
+      margin: 0;
+    }
+  }
+
+  &-content {
+    display: block;
+    clear: both;
+    padding: 15px 0 0 0;
+    border: none;
+
+    .tab-item {
+      display: none;
     }
 
-    &:last-child {
-      border-radius: 0px 8px 8px 0px;
+    .tab-item.active {
+      display: block;
     }
+  }
 
-    &:not(:last-child) {
-      border-right: 0;
-    }
-
+  &-nav-button {
+    border: none !important;
+    border-radius: 0.4rem;
+    margin-bottom: 5px;
+    @extend .btn-primary;
+    color: $dark;
     &::before {
-      content: none;
+      display: none;
     }
-
     &.active {
       background-color: $color-primary;
-
-      .nav-link {
-        color: $white;
-      }
-    }
-
-    .nav-link {
-      padding: 0.5125rem 2.625rem;
-      text-transform: capitalize;
-      color: $text-dark;
-
-      &:hover,
-      &:focus {
-        border-color: transparent;
-      }
     }
   }
+}
 
-  ul.nav.nav-tabs {
-    border: 0;
-  }
-
-  .tab-content {
-    background-color: $color-secondary;
-    border-radius: 10px;
-    padding: 1rem;
+body.dark {
+  .tab {
+    &-nav-button {
+      background-color: rgba($white, 0.1);
+    }
+    &-content {
+      background-color: transparent;
+    }
   }
 }
 
 // accordion
 .accordion {
+  border: none !important;
+  .accordion-item {
+    margin-bottom: 5px;
+    border-radius: calc(0.375rem - 1px) !important;
+  }
   .accordion-button {
     font-size: 1rem;
     padding: 0px 1.25rem;
     color: $dark;
+    box-shadow: none;
 
     &:not(.collapsed) {
       background-color: transparent;
@@ -549,8 +539,9 @@ input {
   }
 
   .accordion-body {
+    border-bottom-left-radius: calc(0.375rem - 1px);
+    border-bottom-right-radius: calc(0.375rem - 1px);
     border-top: 1px solid $border-color;
-    background-color: $color-secondary;
   }
 
   .accordion-button {

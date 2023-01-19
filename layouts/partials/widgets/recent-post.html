@@ -8,7 +8,7 @@
       {{ if .Params.image }}
       <div class="col-3">
         <a href="{{ .RelPermalink }}">
-          {{ partial "images/image.html" (dict "Src" .Params.image "Command" "Crop" "Size" "90x80" "Class" "rounded")}}
+          {{ partial "image.html" (dict "Src" .Params.image "Command" "Crop" "Size" "90x80" "Class" "rounded")}}
         </a>
       </div>
       {{ end }}

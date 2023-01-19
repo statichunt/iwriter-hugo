@@ -7,8 +7,8 @@
 <section class="section bg-white">
   <div class="container">
     <div class="row section pt-0">
-      <div class="col-12 col-lg-10 mx-auto">
-        {{ partial "images/image.html" (dict "Src" .Params.image "Class" "mb-5 rounded w-100" )}}
+      <div class="col-12 col-lg-9 mx-auto">
+        {{ partial "image.html" (dict "Src" .Params.image "Class" "mb-5 rounded w-100" )}}
         <div class="mb-4">
           <h1 class="h2 fw-light mb-3">{{.Title}}</h1>
           <div class="d-flex">
@@ -50,7 +50,7 @@
       <div class="col">
         <div class="blog-card card mb-3">
           <div class="card-img position-relative">
-            {{ partial "images/image.html" (dict "Src" .Params.image "Class" "w-100 card-img-top")}}
+            {{ partial "image.html" (dict "Src" .Params.image "Class" "w-100 card-img-top")}}
             <div class="post-info">
               <span class="text-uppercase">{{ time.Format ":date_long" .PublishDate }}</span>
             </div>
@@ -86,7 +86,7 @@
     <div class="row">
       <div class="col-lg-10 mx-auto">
         {{ if .Params.image}}
-        {{ partial "images/image.html" (dict "Src" .Params.image "Class" "mb-5")}}
+        {{ partial "image.html" (dict "Src" .Params.image "Class" "mb-5")}}
         {{ end }}
         <div class="content">
           {{.Content}}

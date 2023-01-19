@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        {{ partial "images/image.html" (dict "Src" .Params.image "Class" "rounded")}}
+        {{ partial "image.html" (dict "Src" .Params.image "Class" "rounded")}}
       </div>
     </div>
 
@@ -18,7 +18,7 @@
           <div class="row g-4">
             {{ range .Params.gallery_items }}
             <div class="col-lg-3">
-              {{ partial "images/image.html" (dict "Src" .image "Class" "rounded-6")}}
+              {{ partial "image.html" (dict "Src" .image "Class" "rounded-6")}}
             </div>
             {{ end }}
           </div>

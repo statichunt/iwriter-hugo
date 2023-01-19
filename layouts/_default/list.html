@@ -12,7 +12,7 @@
           <div class="col">
             <div class="blog-card card mb-3">
               <div class="card-img position-relative">
-                {{ partial "images/image.html" (dict "Src" .Params.image "Class" "w-100 card-img-top")}}
+                {{ partial "image.html" (dict "Src" .Params.image "Class" "w-100 card-img-top")}}
                 <div class="post-info">
                   <span class="text-uppercase">{{ time.Format ":date_long" .PublishDate }}</span>
                 </div>

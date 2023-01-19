@@ -10,7 +10,7 @@ A paragraph looks like this — Globally incubate standards compliant channels b
 disseminate superior deliverables whereas web-enabled applications. Quickly drive clicks-and-mortar
 catalysts for change before vertical architectures. Credibly reintermediate backend ideas for cross-platform
 models. Continually reintermediate integrated processes through technically sound intellectual capital.
-Holistically foster superior methodologies.
+Holistically foster superior methodologies. Check out [Statichunt](https://statichunt.com)
 
 <hr>
  
@@ -125,15 +125,15 @@ ipsum dolor sit amet, consetetur sadipscing elitr,
 <hr>
 
 ### Collapse :
-{{< collapse "collapse 1" >}}
+{{< collapse "Collapse 1" >}}
   This is a simple collapse
 {{< /collapse >}}
 
-{{< collapse "collapse 2" >}}
+{{< collapse "Collapse 2" >}}
   This is a simple collapse
 {{< /collapse >}}
 
-{{< collapse "collapse 3" >}}
+{{< collapse "Collapse 3" >}}
   This is a simple collapse
 {{< /collapse >}}
 <hr>
