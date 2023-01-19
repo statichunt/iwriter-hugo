@@ -19,7 +19,7 @@ dark_body_color = "#051b29"
 dark_text_color = "#cbcbcb"
 dark_text_light = "#bbbbbb"
 dark_text_dark = "#fff"
-dark_border_color = "#222"
+dark_border_color = "#283e4b"
 black = "#000"
 white = "#fff"
 dark = "#222"
@@ -43,38 +43,29 @@ font_scale = "1.25" # default is "majorThird": 1.25
 # go to https://fonts.google.com/ to find the font you want to use. select your font and copy only the bold part from the URL. and paste it here.
 # example: "Work+Sans:wght@400;500;600"
 font_primary = "Poppins:wght@400;500;600" 
-font_primary_type = "sans-serif" # [serif/sans-serif]
+font_primary_type = "sans-serif"      # [serif/sans-serif]
 font_secondary = ""
-font_secondary_type = "" # [serif/sans-serif]
-font_icon = "Font Awesome 5 Free" # https://fontawesome.com/v5.15/icons/
+font_secondary_type = ""              # [serif/sans-serif]
+font_icon = "Font Awesome 6 Free"     # https://fontawesome.com/v6/icons
 
 
 ############################# Plugins ##############################
 
 # CSS Plugins
 [[params.plugins.css]]
-link = "plugins/slick/slick.css"
+link = "plugins/font-awesome/v6/brands.css"
 [[params.plugins.css]]
-link = "plugins/font-awesome/fontawesome.min.css"
+link = "plugins/font-awesome/v6/solid.css"
 [[params.plugins.css]]
-link = "plugins/font-awesome/brands.css"
-[[params.plugins.css]]
-link = "plugins/font-awesome/solid.css"
+link = "plugins/font-awesome/v6/icons.css"
 
 # JS Plugins
 [[params.plugins.js]]
-link = "plugins/jquery/jquery.min.js"
-[[params.plugins.js]]
-link = "plugins/bootstrap/bootstrap.js"
-[[params.plugins.js]]
-link = "plugins/slick/slick.min.js"
-[[params.plugins.js]]
-link = "plugins/search/fuse.min.js"
-[[params.plugins.js]]
-link = "plugins/search/mark.js"
-[[params.plugins.js]]
-link = "plugins/search/search.js"
-[[params.plugins.js]]
-link = "plugins/instafeed/instafeed.min.js"
-[[params.plugins.js]]
-link = "plugins/webfont-loader/webfont-loader-2.min.js"
+link = "plugins/webfont/webfont-loader-2.js"
+# [[params.plugins.js]]
+# link = "plugins/glightbox.js"
+# [[params.plugins.js]]
+# link = "plugins/lazy-loader.js"
+# [[params.plugins.js]]
+# link = "https://cpwebassets.codepen.io/assets/embed/ei.js"
+# attributes = "async"
