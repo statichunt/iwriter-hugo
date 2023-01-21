@@ -69,3 +69,89 @@ link = "plugins/webfont/webfont-loader-2.js"
 # [[params.plugins.js]]
 # link = "https://cpwebassets.codepen.io/assets/embed/ei.js"
 # attributes = "async"
+
+[module]
+[module.hugoVersion]
+  extended = true
+  min = "0.106.0"
+
+[[module.imports]]
+path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/components/preloader"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/components/custom-script"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/components/render-link"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/icons/font-awesome"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/pwa"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/images"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/shortcodes/buttons"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/shortcodes/codepen"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/shortcodes/collapse"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/shortcodes/notice"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/shortcodes/video"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/shortcodes/tabs"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/shortcodes/image"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/shortcodes/gallery"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/shortcodes/table-of-contents"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/shortcodes/youtube-lite"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/shortcodes/vimeo-lite"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/seo-tools/baidu-analytics"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/seo-tools/matomo-analytics"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/seo-tools/plausible-analytics"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/seo-tools/counter-analytics"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/seo-tools/google-tag-manager"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/seo-tools/site-verifications"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/seo-tools/basic-seo"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/gzip-caching"
+
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/adsense"
