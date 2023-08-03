@@ -41,7 +41,7 @@ $ cd iWriter-hugo/exampleSite/
 $ hugo server --themesDir ../..
 ```
 
-Or Check out [Full Documentation](https://docs.gethugothemes.com/iWriter/?ref=github).
+Or Check out our [Universal Guide](https://docs.gethugothemes.com/guide//?ref=github) to install the theme.
 
 
 ## Deployment and hosting
