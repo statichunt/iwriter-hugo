@@ -27,7 +27,7 @@
                   {{ end }}
                 </ul>
                 <h2 class="h3 fw-light mb-3"><a class="post-title" href="{{.RelPermalink}}">{{ .Title }} </a></h2>
-                <p class="card-text mb-4">{{ .Summary }}</p>
+                <p class="card-text mb-4">{{ .Summary | plainify }}</p>
                 <a class="btn btn-outline-primary btn-sm" href="{{.RelPermalink}}">{{i18n `read_more`}}</a>
               </div>
             </div>

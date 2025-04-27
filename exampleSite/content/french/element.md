@@ -124,18 +124,7 @@ ipsum dolor sit amet, consetetur sadipscing elitr,
 | **3**      | Row:3 Cell:1      | Row:3 Cell:2      |    Row:3 Cell:3 |
 <hr>
 
-### Collapse :
-{{< collapse "Collapse 1" >}}
-  This is a simple collapse
-{{< /collapse >}}
 
-{{< collapse "Collapse 2" >}}
-  This is a simple collapse
-{{< /collapse >}}
-
-{{< collapse "Collapse 3" >}}
-  This is a simple collapse
-{{< /collapse >}}
 <hr>
 
 ### Code and Syntax Highlighting :

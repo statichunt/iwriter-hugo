@@ -77,6 +77,12 @@
   &:focus,
   &.focus {
     background: transparent !important;
-    color: $white;
+    color: $white !important;
+  }
+}
+
+body.dark {
+  .btn-primary {
+    color: $dark-text-dark !important;
   }
 }

@@ -77,6 +77,7 @@ ul {
 .card {
   border: 0;
   border-radius: 0.5rem;
+  background-color: transparent;
 
   &-body {
     padding-left: 0;
@@ -233,6 +234,7 @@ input {
 
   hr {
     opacity: 0.2;
+    margin-bottom: 2rem;
   }
 
   h1,
@@ -253,8 +255,7 @@ input {
   }
 
   a {
-    color: $text-dark;
-
+    margin-bottom: 2rem !important;
     &:hover {
       color: $color-primary;
     }
@@ -345,79 +346,11 @@ input {
     }
   }
 
-  .notices {
-    margin: 2rem 0;
-    position: relative;
-    overflow: hidden;
-    border-radius: 4px;
-  }
-
-  .notices p {
-    padding: 0.7rem;
-    margin-bottom: 0;
-  }
-
-  .notices p::before {
-    position: absolute;
-    top: 2px;
-    color: $white;
-    font-family: $font-icon;
-    font-weight: 900;
-    content: "\f05a";
-    left: 0.7rem;
-    font-size: 90%;
-  }
-
-  .notices.note p {
-    border-top: 1.9rem solid #6ab0de;
-    background-color: #e3f4ff;
-  }
-
-  .notices.note p::after {
-    content: "Note";
-    position: absolute;
-    top: 2px;
-    color: $white;
-    left: 2rem;
-  }
-
-  .notices.tip p {
-    border-top: 1.9rem solid #78c578;
-    background-color: #e2ffe2;
-  }
-
-  .notices.tip p::after {
-    content: "Tip";
-    position: absolute;
-    top: 2px;
-    color: $white;
-    left: 2rem;
-  }
-
-  .notices.info p {
-    border-top: 1.9rem solid #f0b37e;
-    background-color: #ffedde;
-  }
-
-  .notices.info p::after {
-    content: "Info";
-    position: absolute;
-    top: 2px;
-    color: $white;
-    left: 2rem;
-  }
-
-  .notices.warning p {
-    border-top: 1.9rem solid #e06f6c;
-    background-color: #ffdad8;
-  }
-
-  .notices.warning p::after {
-    content: "Warning";
-    position: absolute;
-    top: 2px;
-    color: $white;
-    left: 2rem;
+  .notice {
+    border-radius: 0.8rem;
+    * {
+      margin-bottom: 0;
+    }
   }
 
   .accordion,
@@ -466,13 +399,16 @@ input {
 
 // tab
 .tab {
-  &-panel {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 
-    pre {
-      margin: 0;
-    }
+  pre {
+    margin: 0;
+  }
+
+  &-nav {
+    gap: 0.5rem;
+    border: 0;
   }
 
   &-content {
@@ -490,24 +426,32 @@ input {
     }
   }
 
-  &-nav-button {
+  &-content-panel {
+    padding: 0 !important;
+  }
+
+  &-nav-item {
     border: none !important;
     border-radius: 0.4rem;
     margin-bottom: 5px;
-    @extend .btn-primary;
+    background-color: $dark-text-color;
     color: $dark;
+    @extend .btn-primary;
+    // color: $dark;
     &::before {
       display: none;
     }
     &.active {
       background-color: $color-primary;
+      color: $white;
     }
   }
 }
 
 body.dark {
   .tab {
-    &-nav-button {
+    &-nav-item {
+      color: $white;
       background-color: rgba($white, 0.1);
     }
     &-content {

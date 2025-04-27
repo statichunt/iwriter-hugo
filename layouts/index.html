@@ -24,17 +24,17 @@
 </section>
 {{ end }}
 
-<!--===================== Blog Start =====================--> 
+<!--===================== Blog Start =====================-->
 <section id="post" class="blog section bg-white">
   <div class="container">
     <div class="row">
       {{ $sidebar:= site.Params.sidebar }}
-      
+
       <div class="{{if eq $sidebar `true` }} col-lg-8 {{else}} col-12 {{end}}">
         <div class="row row-cols-1 row-cols-md-2 gy-4">
           {{ $paginator:= .Paginate (where site.RegularPages "Section" "in" site.Params.mainSections) }}
           {{ range $paginator.Pages }}
-  
+
           {{ if eq $sidebar "true"}}
           <!-- card start -->
           <div class="col">
@@ -55,7 +55,7 @@
                   {{ end }}
                 </ul>
                 <h2 class="h3 fw-light mb-3"><a class="post-title" href="{{.RelPermalink}}">{{ .Title }} </a></h2>
-                <p class="card-text mb-4">{{ .Summary }}</p>
+                <p class="card-text mb-4">{{ .Summary | plainify  }}</p>
                 <a class="btn btn-outline-primary btn-sm" href="{{.RelPermalink}}">{{i18n `read_more`}}</a>
               </div>
             </div>
@@ -80,12 +80,12 @@
                     <ul class="post-meta mb-2">
                       {{ range .Params.categories }}
                       <li><a class="text-uppercase" href="{{`categories` | relURL}}/{{. | urlize | lower}}">
-                        {{ . }}
-                      </a></li>
+                          {{ . }}
+                        </a></li>
                       {{ end }}
                     </ul>
                     <h2 class="h4 fw-light mb-3"><a class="post-title" href="{{.RelPermalink}}">{{ .Title }} </a></h2>
-                    <p class="card-text mb-4">{{ .Summary }}</p>
+                    <p class="card-text mb-4">{{ .Summary | plainify }}</p>
                     <a class="btn btn-outline-primary btn-sm" href="{{.RelPermalink}}">{{i18n `read_more`}}</a>
                   </div>
                 </div>
@@ -94,7 +94,7 @@
           </div>
           <!-- card end -->
           {{ end }}
-  
+
           {{ end }}
         </div>
 
@@ -102,7 +102,7 @@
           {{ partial "components/custom-pagination.html" . }}
         </div>
       </div>
-      
+
       {{ if eq $sidebar "true" }}
       <div class="col-lg-4">
         <div class="bg-body ms-xl-3 p-4 rounded">
@@ -114,7 +114,7 @@
       {{ end }}
 
     </div>
-  
+
   </div>
 </section>
 <!--===================== Blog End =====================-->

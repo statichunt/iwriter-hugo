@@ -111,28 +111,6 @@ body {
     color: $dark-text-light;
   }
 
-  .notices {
-    &.note p {
-      border-top: 1.9rem solid #6ab0de;
-      background: #1e303c;
-    }
-
-    &.tip p {
-      border-top: 1.9rem solid #78c578;
-      background: #243a24;
-    }
-
-    &.info p {
-      border-top: 1.9rem solid #f0b37e;
-      background: #42362c;
-    }
-
-    &.warning p {
-      border-top: 1.9rem solid #e06f6c;
-      background: #483331;
-    }
-  }
-
   .checkmark svg {
     fill: transparent;
   }
